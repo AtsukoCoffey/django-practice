@@ -1,0 +1,124 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poiret+One&display=swap');
+
+:root {
+    /** Fonts */
+    --title: 'Poiret One', sans-serif;
+    --main-font: 'Josefin Sans', sans-serif;
+
+    /* Colours */
+    --logo-green: rgb(59, 115, 57);
+    --mos-green: rgb(87, 105, 75);
+    --light-green: #A9E560;
+    --white-green: rgb(239, 255, 239);
+    --white-orange: rgb(253, 236, 211);
+    --strong-orange: rgb(230, 87, 5);
+    --dark-orange: rgb(85, 32, 1);
+    --white: #fff;
+    --dark-green: rgb(20, 20, 20);
+    --black: #000;
+
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: var(--white);
+}
+
+/* Footer */
+footer {
+    flex-shrink: 0;
+    display: flex;
+    background-color: var(--mos-green);
+    color: var(--white);
+    font-weight: 100;
+    padding-left: 0.5rem;
+}
+
+#social-networks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style-type: none;
+    width: 100%;
+    max-width: 250px;
+}
+#social-networks a {
+    color: var(--white-green);
+}
+
+/* Header */
+.navbar {
+    background-color: var(--logo-green);
+}
+
+.logo {
+    color: var(--white-green);
+    /* Title logo font */
+    font-family: var(--title);
+    font-size: 1.8rem;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.community-top {
+    color: var(--white-green);
+    font-size: 1.1rem;
+}
+
+.nav-item>a {
+    color: var(--white-green);
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover,
+.nav-link:focus,
+.nav-link:hover {
+    color: var(--light-green);
+}
+/* nav.active {
+    color: var(--light-green);
+}
+.nav-link.active {
+    color: var(--light-green);
+} */
+/* .logo a:visited {
+    color: var(--white-green);
+} */
+
+
+
+
+
+
+/* Media query: General smart phone (768px and up) */
+@media screen and (min-width:768px) {
+    .logo {
+        font-size: 2.2rem;
+    }
+    .community-top {
+        font-size: 1.5rem;
+    }
+    
+}
+
+/* Media query: General smart phone (1024px and up) */
+@media screen and (min-width:1024px) {
+    .logo {
+        font-size: 2.7rem;
+    }
+    .community-top {
+        font-size: 1.8rem;
+    }
+
+    footer {
+        padding: 0 10%;
+    }
+}

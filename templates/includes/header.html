@@ -1,0 +1,37 @@
+{% load static %}
+
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand logo" href="https://atsukocoffey.github.io/healthy-food-club/" target="_blank"
+                rel="author" aria-label="Visit our grand top page (opens in a new tab)"
+                title="Visit our  grand top page (opens in a new tab)">Healthy Food Club</a><a
+                class="navbar-brand community-top" href="{% url 'home' %}" aria-label="Community Area Top page"
+                title="Community Area Top page">- Community -</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navigation bar -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">SIGNUP</a>
+                    </li>
+                </ul>
+                <!-- Search bar -->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-warning" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
