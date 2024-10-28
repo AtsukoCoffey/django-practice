@@ -3,13 +3,14 @@ from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
 from django_resized import ResizedImageField
 
+
 # choices Field 
 SERVES = (
-    ('2', 'Two'),
-    ('4', 'Four'),
-    ('6', 'Six'),
-    ('8', 'Eight'),
-    ('10', 'Ten'),
+    (2, '2'),
+    (4, '4'),
+    (6, '6'),
+    (8, '8'),
+    (10, '10'),
 )
 
 
@@ -21,8 +22,8 @@ class Recipe(models.Model):
         User, related_name='recipe_owner', on_delete=models.CASCADE)
     title = models.CharField(max_length=300, null=False, blank=False)
     description = models.CharField(max_length=500, null=False, blank=False)
-    instructions = RichTextField(max_length=10000, null=False, blank=False)
-    ingredients = RichTextField(max_length=10000, null=False, blank=False)
+    instructions = RichTextField(max_length=10000, null=False, blank=False, default='Instructions')
+    ingredients = RichTextField(max_length=10000, null=False, blank=False, default='Ingredients')
     image = ResizedImageField(
         size=[400, None], quality=75, upload_to='recipes/',
         force_format='WEBP', blank=False, null=False
