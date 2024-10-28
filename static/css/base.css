@@ -15,9 +15,11 @@
     --strong-orange: rgb(230, 87, 5);
     --dark-orange: rgb(85, 32, 1);
     --white: #fff;
-    --dark-green: rgb(20, 20, 20);
+    --dark-green: rgb(24, 48, 24);
     --black: #000;
 
+    /* Shadows */
+    --small-shadow: 1px -1px 7px rgb(24, 48, 24);
 }
 
 body {
@@ -83,20 +85,20 @@ footer {
 .nav-link:hover {
     color: var(--light-green);
 }
-/* nav.active {
+
+.navbar-nav .nav-link.active {
     color: var(--light-green);
+    border-bottom: 2px solid var(--light-green);
+    font-weight: 500;
 }
-.nav-link.active {
-    color: var(--light-green);
-} */
-/* .logo a:visited {
-    color: var(--white-green);
-} */
 
-
-
-
-
+/* form */
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--small-shadow);
+    border-radius: 5px;
+}
 
 /* Media query: General smart phone (768px and up) */
 @media screen and (min-width:768px) {
