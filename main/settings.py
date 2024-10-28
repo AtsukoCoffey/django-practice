@@ -45,10 +45,12 @@ INSTALLED_APPS = [
 
     # App
     'home',
+    'recipes',
 
     # Other
     'crispy_forms',
     'crispy_bootstrap5',
+    'djrichtextfield'
 ]
 
 SITE_ID = 1
