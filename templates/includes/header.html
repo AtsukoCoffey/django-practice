@@ -21,6 +21,9 @@
                         <a class="nav-link{% if url_name == 'home' %} active" aria-current="page{% endif %}" href="{% url 'home' %}">HOME</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link{% if url_name == 'recipes' %} active" aria-current="page{% endif %}" href="{% url 'recipes' %}">RECIPES</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link{% if url_name == 'add_recipe' %} active" aria-current="page{% endif %}" href="{% url 'add_recipe' %}">NEW</a>
                     </li>
                     {% if request.user.is_authenticated %}

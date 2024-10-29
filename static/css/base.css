@@ -100,6 +100,23 @@ footer {
     border-radius: 5px;
 }
 
+/* Recipes */
+
+.card {
+    height: 90%;
+    margin-top: 1rem;
+}
+
+.recipes {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.recipes:hover {
+    cursor: pointer;
+}
+
+
 /* Media query: General smart phone (768px and up) */
 @media screen and (min-width:768px) {
     .logo {
