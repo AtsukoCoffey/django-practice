@@ -116,9 +116,56 @@ footer {
     cursor: pointer;
 }
 
+.recipe-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.recipe-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-pic {
+    width: 100%;
+    height: auto;
+}
 
 /* Media query: General smart phone (768px and up) */
 @media screen and (min-width:768px) {
+    .recipe-info {
+        flex-direction: row;
+        border: 1px solid var(--black);
+    }
+
+    .recipe-img {
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    .recipe-detail {
+        width: 40%;
+        padding: 2rem;
+    }
+
+    .recipe-container {
+        flex-direction: row;
+    }
+
+    .ingredients {
+        width: 40%
+    }
+    .instruction {
+        width: 60%;
+    }
+
     .logo {
         font-size: 2.2rem;
     }
