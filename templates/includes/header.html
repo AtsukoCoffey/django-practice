@@ -23,9 +23,15 @@
                     <li class="nav-item">
                         <a class="nav-link{% if url_name == 'recipes' %} active" aria-current="page{% endif %}" href="{% url 'recipes' %}">RECIPES</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link{% if url_name == 'add_recipe' %} active" aria-current="page{% endif %}" href="{% url 'add_recipe' %}">NEW</a>
-                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            NEW
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item{% if url_name == 'add_recipe' %} active" aria-current="page{% endif %}" href="{% url 'add_recipe' %}">Recipe</a></li>
+                          <li><a class="dropdown-item{% if url_name == 'add_recipe' %} active" aria-current="page{% endif %}" href="{% url 'add_recipe' %}">Post</a></li>
+                        </ul>
+                      </li>
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link{% if url_name == 'accounts_logout' %} active{% endif %}" href="/accounts/logout">LOGOUT</a>

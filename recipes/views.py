@@ -1,6 +1,10 @@
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import (
+    CreateView, ListView, DetailView, DeleteView
+)
 
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin, UserPassesTestMixin
+)
 
 # This mixin is preventing not logged in user
 
@@ -30,8 +34,17 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     template_name = "recipes/add_recipe.html"
     model = Recipe
     form_class = RecipeForm
-    success_url = "/recipes/recipes/"
+    success_url = "/recipes/"
 
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(AddRecipe, self).form_valid(form)
+
+
+class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """Delete a recipe"""
+    model = Recipe
+    success_url = '/recipes/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
