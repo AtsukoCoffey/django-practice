@@ -2,6 +2,8 @@ from django.views.generic import (
     CreateView, ListView, DetailView, DeleteView, UpdateView
 )
 
+from django.db.models import Q
+
 from django.contrib.auth.mixins import (
     LoginRequiredMixin, UserPassesTestMixin
 )
@@ -18,6 +20,18 @@ class Recipes(ListView):
     template_name = "recipes/recipes.html"
     model = Recipe
     context_object_name = "recipes"
+
+    def get_queryset(self, **kwargs):
+        query = self.request.GET.get('q')
+        if query:
+            recipes = self.model.objects.filter(
+                Q(title__icontains=query) |
+                Q(description__icontains=query) |
+                Q(instructions__icontains=query)
+            )
+        else:
+            recipes = self.model.objects.all()
+        return recipes
 
 
 class RecipeDetail(DetailView):
