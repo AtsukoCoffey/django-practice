@@ -1,5 +1,5 @@
 from django.views.generic import (
-    CreateView, ListView, DetailView, DeleteView
+    CreateView, ListView, DetailView, DeleteView, UpdateView
 )
 
 from django.contrib.auth.mixins import (
@@ -39,6 +39,17 @@ class AddRecipe(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super(AddRecipe, self).form_valid(form)
+
+
+class EditRecipe(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """Edit a recipe"""
+    template_name ='recipes/edit_recipe.html'
+    model = Recipe
+    form_class = RecipeForm
+    success_url = '/recipes/'
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
 
 
 class DeleteRecipe(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
