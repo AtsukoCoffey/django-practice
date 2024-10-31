@@ -1,2 +1,22 @@
 {% extends 'base.html' %}
 
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container flex-column pt-3">
+    <section class="text-center">
+        <h1 class="main-title mx-auto">Welcome to the Community Area of Healthy Food Club!</h1>
+        <p class="pt-4">This is where we share healthy recipes, information and tips & tricks for a better food lifestyle. We aim to generate positive discussion for all those interested in becoming more aware of what we eat. Join us today and share your favorite recipes! We also have a useful search and filter option for our members. Give it a try!</p>
+    </section>
+    <section>
+        <div class="recipe-cont">
+            {% for recipe in recipes %}
+                <a href="{% url 'recipe_detail' recipe.id %}" class="img-container">
+                    <img src="{{recipe.image.url}}" alt="{{recipe.image_alt}}" style="width: 100%">
+                    <div class="centerd"><h2>{{recipe.title}}</h2></div>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}
